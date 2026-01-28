@@ -7,7 +7,7 @@ A Deep Q-Network implementation for the CartPole-v1 environment using PyTorch an
 ## Credits
 
 - **Task assigned by:** SNEHASIS BANERJEE, Sr. Scientist, TCS Research; Guest Faculty, IIIT-G; SM: IEEE, CSI, ACM  
-- **Based on:** His codebase from [here](https://snehasisb.github.io/tutorial/) and his lecture "Nuts and Bolts of AI"
+- **Based on:** His codebase from [his tutorial page](https://snehasisb.github.io/tutorial/) and his lecture "Nuts and Bolts of AI"
 - **Code written and modified by:** Sayantan Saha Roy, CSE Department, RCC Institute of Information Technology
 
 ## Features
@@ -22,21 +22,26 @@ A Deep Q-Network implementation for the CartPole-v1 environment using PyTorch an
 Follow these steps to set up and run the environment:
 
 1. **Create a virtual environment:**
+
    ``` bash
    python -m venv gymenv
    ```
 
 2. **Activate the virtual environment:**
    - On Linux/macOS:
+
      ``` bash
      source gymenv/bin/activate
      ```
+
    - On Windows:
+
      ``` bash
      source gymenv\Scripts\activate
      ```
 
 3. **Upgrade pip and install dependencies:**
+
    ``` bash
    pip install --upgrade pip
    pip install torch --index-url https://download.pytorch.org/whl/cpu #Run purely on CPU, no GPU required
@@ -44,6 +49,7 @@ Follow these steps to set up and run the environment:
    ```
 
 4. **Run the agent:**
+
    ``` bash
    python virtual_constraint_dqn.py
    ```
