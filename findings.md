@@ -48,3 +48,5 @@ Increase the required reward threshold to encourage the model to learn to balanc
 
 - **Initial Conditions**: Test by placing the pole at an angle to see if the agent can recover.
 - **Memory Scaling**: Experiment with larger replay memory sizes (Current: 10,000 samples ≈ 316 MB RAM).
+
+Complete Repository on Github [ssrplays121/DQN_Gym_CartPole](https://github.com/ssrplays121/DQN_Gym_CartPole)
