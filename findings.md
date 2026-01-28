@@ -16,3 +16,11 @@ To resolve the drifting issue, strict physical constraints are required:
 - **Kill Zones**: Implement penalties for breaching the hard limit to prevent the model from exploiting the soft limit.
 
 > **Note**: These changes effectively force the agent to respect the physical boundaries of the CartPole environment.
+
+## 4. Updates (Post-Hard Limit)
+
+| Configuration | Observation |
+| :--- | :--- |
+| **`1e-4` + Hard Limit** | Model is much more stable and balances for longer durations. However, the pole still eventually falls at the end of the episode. |
+
+**Next Step**: Increase the required reward threshold to encourage the model to learn to balance for even longer periods.

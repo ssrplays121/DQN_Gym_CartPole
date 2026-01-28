@@ -16,7 +16,8 @@ LR = 1e-4                  # Learning Rate decreased to observe stability
 MEMORY_SIZE = 10000
 MIN_MEMORY = 1000          # Warmup samples before training
 TARGET_UPDATE = 10         # Hard update frequency
-BOUNDARY_LIMIT = 1.0       # Define a virtual "small boundary" (Default is 2.4)
+BOUNDARY_LIMIT = 1.0       # Define a virtual "small boundary"
+HARD_LIMIT = 2.0           # Actual physical limit of the environment
 
 # Force CPU for CartPole (usually faster due to low overhead)
 device = torch.device("cpu")
@@ -134,6 +135,10 @@ def main():
             # If the cart goes beyond the small BOUNDARY_LIMIT, apply heavy penalty
             if abs(cart_pos) > BOUNDARY_LIMIT:
                 r -= 2.0
+            
+            # Setup kill zones
+            if abs(cart_pos) > HARD_LIMIT:
+                r -= 10.0
             
             # 4. Terminal Penalty (Actual Crash)
             if terminated:
