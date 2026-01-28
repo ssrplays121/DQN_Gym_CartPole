@@ -24,3 +24,20 @@ To resolve the drifting issue, strict physical constraints are required:
 | **`1e-4` + Hard Limit** | Model is much more stable and balances for longer durations. However, the pole still eventually falls at the end of the episode. |
 
 **Next Step**: Increase the required reward threshold to encourage the model to learn to balance for even longer periods.
+
+## 5. Stress Test Analysis (Reward Threshold = 500)
+
+**Simulation Runs**: 10
+
+| Outcome | Frequency | Description |
+| :--- | :--- | :--- |
+| **Excellent Balance** | 7 | Constantly balanced in middle, minimal deviation, stayed within soft limit. |
+| **Near Boundary** | 1 | Balanced but almost left the boundary. |
+| **Crash** | 1 | Pole crashed. |
+| **Unstable** | 1 | Jerking left/right within hard limit. |
+
+*(Note: Observations based on manual review of runs)*
+
+## 6. Future Plans
+- **Initial Conditions**: Test by placing the pole at an angle to see if the agent can recover.
+- **Memory Scaling**: Experiment with larger replay memory sizes (Current: 10,000 samples ≈ 316 MB RAM).

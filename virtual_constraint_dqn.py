@@ -16,6 +16,7 @@ LR = 1e-4                  # Learning Rate decreased to observe stability
 MEMORY_SIZE = 10000
 MIN_MEMORY = 1000          # Warmup samples before training
 TARGET_UPDATE = 10         # Hard update frequency
+REWARD_THRESHOLD = 500     # Required reward to consider the agent "solved"
 BOUNDARY_LIMIT = 1.0       # Define a virtual "small boundary"
 HARD_LIMIT = 2.0           # Actual physical limit of the environment
 
@@ -182,7 +183,7 @@ def main():
             print(f"Ep {episode:4d} | Score: {episode_reward:6.1f} | Epsilon: {epsilon:.2f} | Mem: {memory.size}")
 
         # Stop condition (modified score due to penalties)
-        if episode_reward >= 300: 
+        if episode_reward >= REWARD_THRESHOLD: 
             print(f"Solved (Stable within boundary) in {episode} episodes!")
             break
 
